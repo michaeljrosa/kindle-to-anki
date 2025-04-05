@@ -19,7 +19,7 @@ def import_clippings(clippings):
         print("=== Create Anki resources")
         model = src.anki.create_model()
         decks = src.anki.create_decks(model, clippings)
-        src.anki.create_package("./gen", decks)
+        src.anki.create_package("./Books", decks)
         print("Done")
     except:
         print("failed to import clippings:", sys.exc_info()[1])
