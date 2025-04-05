@@ -8,13 +8,13 @@ def create_model():
         int(datetime.utcnow().timestamp()),
         'kindle-to-anki model',
         fields=[
-            {'name': 'Question'},
-            {'name': 'Answer'},
+            {'name': 'Front'},
+            {'name': 'Back'},
         ],
         templates=[{
-            'name': 'imported-card',
-            'qfmt': '{{Question}}',
-            'afmt': '{{FrontSide}}<hr id="answer">{{Answer}}',
+            'name': 'Card 1',
+            'qfmt': '{{Front}}',
+            'afmt': '{{Front}}<hr>{{Back}}',
         }],
     )
 
@@ -33,7 +33,7 @@ def create_decks(model, clippings):
 
         note = genanki.Note(
             model=model,
-            fields=['', clipping.contents]
+            fields=[clipping.contents, '']
         )
         decks[id].add_note(note)
 
