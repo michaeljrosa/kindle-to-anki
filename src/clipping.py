@@ -8,7 +8,7 @@ class Clipping:
         self.contents = contents
 
 def parse(file):
-    f = open(file, "r")
+    f = open(file, "r", encoding="utf8")
     lines = f.readlines()
     f.close()
 
@@ -24,13 +24,11 @@ def parse(file):
 
         if line != clipping_delimitor:
             is_new = False
-            line = line.replace(":", " -")
-            line = line.replace("”", "\"")
-            line = line.replace("“", "\"")
             raw_data.append(line)
             continue
         
-        book_name = raw_data[idx_book_name].encode('ascii', 'ignore').decode('utf-8')
+                                                                                    # : is not a valid char for filenames
+        book_name = raw_data[idx_book_name].encode('ascii', 'ignore').decode('utf8').replace(":"," -")
         clipping = Clipping(book_name, raw_data[idx_contents])
         clippings.append(clipping)
 
