@@ -22,7 +22,9 @@ def import_clippings(clippings):
         src.anki.create_package("./gen", decks)
         print("Done")
     except:
-        print("failed to import clippings:", sys.exc_info())
+        print("failed to import clippings:", sys.exc_info()[1])
+        # Alternative print statement with more error info
+        # print("failed to import clippings:", sys.exc_info())
 
 if __name__ == "__main__":
     import_clippings()
