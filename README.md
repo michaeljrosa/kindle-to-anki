@@ -65,7 +65,9 @@ First, you need to open Anki:
 2. Create a new profile or choose an existing one
 3. Open it
 
-Then, for each book, you will need to repeat the following:
+You can use ["MultiDeckImporter"](https://ankiweb.net/shared/info/1563006742) to import all the decks at once.
+
+Alternatively, for each book, you will need to repeat the following:
 
 1. Click "Import File"
 2. Head to the project directory, under the `gen` folder
