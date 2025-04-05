@@ -3,6 +3,9 @@ import os.path
 import src.clipping
 import src.anki
 
+# comment out the following for a different view of error information
+import sys
+
 @click.command()
 @click.option("--clippings", default="", help="path to My Clippings.txt file")
 def import_clippings(clippings):
@@ -19,7 +22,7 @@ def import_clippings(clippings):
         src.anki.create_package("./gen", decks)
         print("Done")
     except:
-        print("failed to import clippings:", sys.exc_info()[0])
+        print("failed to import clippings:", sys.exc_info())
 
 if __name__ == "__main__":
     import_clippings()

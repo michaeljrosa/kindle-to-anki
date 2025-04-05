@@ -24,9 +24,12 @@ def parse(file):
 
         if line != clipping_delimitor:
             is_new = False
+            line = line.replace(":", " -")
+            line = line.replace("”", "\"")
+            line = line.replace("“", "\"")
             raw_data.append(line)
             continue
-
+        
         book_name = raw_data[idx_book_name].encode('ascii', 'ignore').decode('utf-8')
         clipping = Clipping(book_name, raw_data[idx_contents])
         clippings.append(clipping)
