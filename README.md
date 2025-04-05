@@ -5,7 +5,6 @@
 Convert your Amazon Kindle clippings to Anki cards (one deck per book) and easily import them.
 
 Built with Python `3.8` for Anki `2.1.48`.
-Updated for Python `3.12`
 
 ## Getting Started
 
@@ -15,7 +14,7 @@ The following steps will guide you through the process to get a local copy up an
 
 You must have the following to run the project:
 
-* [Python](https://www.python.org/downloads/) `3.12` or above
+* [Python](https://www.python.org/downloads/) `3.8` or above
 * [pip](https://pip.pypa.io/en/stable/installation/) `19.2.3` or above
 * [Anki](https://apps.ankiweb.net/) `2.1.48` or above
 
